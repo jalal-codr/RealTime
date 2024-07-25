@@ -1,5 +1,6 @@
-from flask import  (Blueprint,Flask,redirect, request)
+from flask import  Blueprint
 # from ..db import db
+from ..Controllers.Uploads.imageUploads import getImages
 from ..Controllers.Hello.hello import sayHello
 
 
@@ -7,10 +8,16 @@ bp = Blueprint('hello', __name__)
 
 @bp.route('/')
 def index():
-    x = sayHello()
-    return(x)   
+    return sayHello()
+       
 
-@bp.route('/uploadImage')
+@bp.route('/uploadImages',methods=['POST'])
 def uploadImage():
-    x = sayHello()
-    return(x)  
+    try:
+        data = getImages()
+        return(data)
+    except Exception as e:
+        return(e)
+    
+    
+      

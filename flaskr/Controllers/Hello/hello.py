@@ -1,2 +1,2 @@
 def sayHello():
-    return 'Hello, World!'
+    return("RealTime Server")
