@@ -8,5 +8,5 @@ from flask import  request,jsonify
 
 def getImages():
     data = request.get_json()
-    return jsonify({"data":data}),200
+    return jsonify({"data":data})
   
